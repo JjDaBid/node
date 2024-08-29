@@ -65,7 +65,7 @@ cartsRouter.get('/:cid', (req, res) => {
   const carts = readCartsFile();
   const cart = carts.find(c => c.id === req.params.cid);
   if (cart) {
-    res.json(cart.products);
+    res.json(cart);
   } else {
     res.status(404).json({ message: 'Carrito no encontrado' });
   }
