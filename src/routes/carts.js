@@ -39,12 +39,6 @@ const readProductsFile = () => {
     }
 };
 
-// Ruta para obtener todos los carritos
-cartsRouter.get('/', (req, res) => {
-    const carts = readCartsFile();
-    res.json(carts);
-});
-
 // Ruta para crear un nuevo carrito
 cartsRouter.post('/', (req, res) => {
     const carts = readCartsFile();
