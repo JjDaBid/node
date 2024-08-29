@@ -1,18 +1,24 @@
 [
   {
     "id": "1",
-    "name": "Play Station 5",
-    "description": "Consola PS5",
-    "price": 2800000,
+    "title": "Play Station 5",
+    "description": "Consola PS5 Edicion Digital",
+    "code": "COD001",
+    "price": 3200000,
+    "status": true,
     "stock": 50,
-    "category": "Consolas"
+    "category": "Consolas",
+    "thumbnails": []
   },
   {
     "id": "2",
-    "name": "Play Station 4",
-    "description": "Consola PS4 slim",
+    "title": "Play Station 4",
+    "description": "Consola PS4 Slim",
+    "code": "COD002",
     "price": 1300000,
+    "status": true,
     "stock": 20,
-    "category": "Consolas"
+    "category": "Consolas",
+    "thumbnails": []
   }
 ]

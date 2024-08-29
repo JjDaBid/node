@@ -44,21 +44,25 @@ productsRouter.get('/:pid', (req, res) => {
 });
 
 productsRouter.post('/', (req, res) => {
-  const { name, description, price, stock, category } = req.body;
+  const { title, description, code, price, status, stock, category } = req.body;
 
   // Validar que todos los campos estén presentes
-  if (!name || !description || !price || !stock || !category) {
-      return res.status(400).json({ message: 'Faltan datos requeridos para el producto' });
+  if (!title || !description || !code || !price || !status || !stock || !category) {
+      return res.status(400).json({ status:`error`, message: 'Faltan datos requeridos para el producto' });
   }
 
   const products = readProductsFile();
   const newProduct = {
-      id: (products.length + 1).toString(),
-      name,
-      description,
-      price,
-      stock,
-      category,
+
+    id: (products.length + 1).toString(),
+    title: req.body.title,
+    description: req.body.description,
+    code: req.body.code,
+    price: req.body.price,
+    status: req.body.status !== undefined ? req.body.status : true,
+    stock: req.body.stock,
+    category: req.body.category,
+    thumbnails: req.body.thumbnails || []
   };
   products.push(newProduct);
   writeProductsFile(products);
